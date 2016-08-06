@@ -79,7 +79,7 @@ unsigned char  reg_0=0x00;
     }
 }
 
-
+unsigned char stmpOK[8] = {0,0,0,0,0,0,0,0};
 unsigned char stmpON[8] = {0,0,1,0,0,0,0,0};
 unsigned char stmpOFF[8] = {0,0,0,0,0,0,0,0};
 
@@ -104,8 +104,7 @@ void Recibir(){
          digitalWrite(LED,HIGH);
       delay(20);
       digitalWrite(LED,LOW);
-      
-      
+       
       
       CAN.readMsgBuf(&len, buf);    // read data,  len: data length, buf: data buf
          canId = CAN.getCanId();
